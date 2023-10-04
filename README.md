@@ -4,4 +4,8 @@ A subsystem that measures the angle of the steering wheel, accelerator, and brak
 
 ## Potential Hardware Solutions
 
-* Analog Hall effect sensors and magnets on the wheel and pedals that detect their positions. The analog values can be mapped from 0-100% for the pedals or from -90 to +90 degrees for the steering wheel.
+* Honeywell RTY060 (2x) and Honeywell RTY180 (1x) for both pedals and steering wheel
+
+## Software
+
+* We can put these on the car, find the true range of motion of the pedals and wheel, and set these as the software endpoints (0-100%)
