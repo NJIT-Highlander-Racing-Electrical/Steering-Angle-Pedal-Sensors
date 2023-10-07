@@ -5,6 +5,7 @@ A subsystem that measures the angle of the steering wheel, accelerator, and brak
 ## Potential Hardware Solutions
 
 * Honeywell RTY060 (2x) and Honeywell RTY180 (1x) for both pedals and steering wheel
+* Seeed SAMD21 because minimal IO and compact?
 
 ## Software
 
