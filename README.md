@@ -5,7 +5,7 @@ A subsystem that measures the angle of the steering wheel, accelerator, and brak
 ## Hardware Solutions
 
 * Honeywell RTY060 (2x) and Honeywell RTY180 (1x) for both pedals and steering wheel
-* ESP32 and TJA1051T
+* ESP32 and TJA1051T (using ESP32 TWAI CAN-Bus Controller)
 
 ## Software
 
