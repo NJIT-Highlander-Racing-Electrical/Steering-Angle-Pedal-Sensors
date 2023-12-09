@@ -1,7 +1,7 @@
 // Define constant values from car. Should be updated when these subsystems are done.
 
-const float MIN_STEERING_ANGLE = -900.0;
-const float MAX_STEERING_ANGLE = 900.0;
+const float MIN_STEERING_ANGLE = -110.0;
+const float MAX_STEERING_ANGLE = 110.0;
 float steeringAnalogValue;
 float steeringAngle;
 
