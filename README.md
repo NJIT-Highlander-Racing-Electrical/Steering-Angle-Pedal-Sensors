@@ -19,15 +19,14 @@ A subsystem that measures the angle of the steering wheel, accelerator, and brak
 Rotary Sensors:
 
 * N North American:
-** pin 1 = Vcc
-** pin 2 = GND
-** pin 3 = output
+  * pin 1 = Vcc
+  * pin 2 = GND
+  * pin 3 = output
 
 * 24 AWG Connection Wire:
-
-** VCC (pin 1) - RED
-** GND (pin 2) - BLACK
-** OUTPUT (pin 3) - YELLOW
+  * VCC (pin 1) - RED
+  * GND (pin 2) - BLACK
+  * OUTPUT (pin 3) - YELLOW
 
  ***Ignore connector pigtail because colors are reversed
  
