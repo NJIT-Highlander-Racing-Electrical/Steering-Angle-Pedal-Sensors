@@ -9,10 +9,11 @@ A subsystem that measures the angle of the steering wheel, accelerator, and brak
 
 * Honeywell RTY060 (2x) and Honeywell RTY180 (1x) for both pedals and steering wheel
 * ESP32 and TJA1051T (using ESP32 TWAI CAN-Bus Controller)
+* Chassis/Ergonomics subteam is designing an adapter to transform pedal motion into rotary shaft motion
 
 ## Software
 
-* We can put these on the car, find the true range of motion of the pedals and wheel, and set these as the software endpoints (0-100%)
+* We can put these sensors on the car, find the true range of motion of the pedals and wheel, and set these as the software endpoints (0-100%)
 
 ## Wiring
 
@@ -28,7 +29,7 @@ Rotary Sensors:
   * GND (pin 2) - BLACK
   * OUTPUT (pin 3) - YELLOW
 
- ***Ignore connector pigtail because colors are reversed
+ * Ignore connector pigtail because colors are reversed
  
 
  
