@@ -23,11 +23,11 @@ Rotary Sensors:
 ** pin 2 = GND
 ** pin 3 = output
 
- * 24 AWG Connection Wire:
+* 24 AWG Connection Wire:
 
- ** VCC (pin 1) - RED
- ** GND (pin 2) - BLACK
- ** OUTPUT (pin 3) - YELLOW
+** VCC (pin 1) - RED
+** GND (pin 2) - BLACK
+** OUTPUT (pin 3) - YELLOW
 
  ***Ignore connector pigtail because colors are reversed
  
