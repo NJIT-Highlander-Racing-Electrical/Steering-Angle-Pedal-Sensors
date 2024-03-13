@@ -5,6 +5,9 @@ A subsystem that measures the angle of the steering wheel, accelerator, and brak
 ## Project Note
 * The steering angle portion of the project was scrapped due to a lack of time. This project would have required either a specialized rotary sensor that could be fitted to the steering column, or a gearing/mounting system that would turn the steering column rotation into rotary sensor rotation. Leads decided that the data was not valuable enough for testing to warrant the time commitment.
 
+
+
+
 ## Hardware Solutions
 
 * Honeywell RTY060 (2x) and Honeywell RTY180 (1x) for both pedals and steering wheel
