@@ -33,6 +33,13 @@ Rotary Sensors:
   * OUTPUT (pin 3) - YELLOW
 
  * Ignore connector pigtail because colors are reversed
+
+ * ESP32 Pins
+    * Sensor 1 = 36
+    * Sensor 2 = 39
+    * CAN-TX = 26
+    * CAN-RX = 27
+  
  
 
  
