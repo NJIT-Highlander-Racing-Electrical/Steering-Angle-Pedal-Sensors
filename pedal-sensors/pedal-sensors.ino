@@ -42,7 +42,7 @@ void loop() {
   gasPedalAnalogValue = analogRead(gasPedalSensor);
 
   //Input voltages from the sensors range between roughly 185-3500
-  
+
   //The code below just clips the input voltage to the 185-3500 range
   //This is so we dont get negative percentages or over 100%
   //This will need to be adjusted once we actually get the sensors in the car
@@ -79,7 +79,7 @@ void loop() {
   canSender();
 
 
-  delay(50);
+  delay(5);
 }
 
 
@@ -91,6 +91,8 @@ void canSender() {
   CAN.beginPacket(0x29);          //sets the ID
   CAN.print(gasPedalPercentage);  //prints data to CAN Bus just like Serial.print
   CAN.endPacket();
+
+  delay(5);
 
   CAN.beginPacket(0x2A);
   CAN.print(brakePedalPercentage);
