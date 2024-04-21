@@ -3,7 +3,7 @@
 A subsystem that measures the angle of the steering wheel, accelerator, and brake pedal. These values are sent via the CAN-Bus to other subsystems on the vehicle and the DAS.
 
 ## Project Note
-* The steering angle portion of the project was scrapped due to a lack of time. This project would have required either a specialized rotary sensor that could be fitted to the steering column, or a gearing/mounting system that would turn the steering column rotation into rotary sensor rotation. Leads decided that the data was not valuable enough for testing to warrant the time commitment.
+* The steering angle portion of the project was scrapped due to a lack of time. This project would have required either a specialized rotary sensor that could be fitted to the steering column, or a gearing/mounting system that would turn the steering column rotation into rotary sensor rotation. Leads decided that the data was not valuable enough for testing to warrant the time commitment. The code folder pedal-sensors updates the previous developed code file steering-angle-pedal-sensors.
 
 
 
