@@ -40,14 +40,16 @@ void setup() {
 void loop() {
 
   gasPedalAnalogValue = analogRead(gasPedalSensor);
+  Serial.print("GasPedalAnalogValue: ");
+  Serial.println(gasPedalAnalogValue);
 
   //Input voltages from the sensors range between roughly 185-3500
 
   //The code below just clips the input voltage to the 185-3500 range
   //This is so we dont get negative percentages or over 100%
   //This will need to be adjusted once we actually get the sensors in the car
-  if ((gasPedalAnalogValue < 185) && (gasPedalAnalogValue > 0)) gasPedalAnalogValue = 185;
-  if (gasPedalAnalogValue > 3500) gasPedalAnalogValue = 3500;
+  if ((gasPedalAnalogValue < 375) && (gasPedalAnalogValue > 0)) gasPedalAnalogValue = 375;
+  if (gasPedalAnalogValue > 2600) gasPedalAnalogValue = 2600;
 
   gasPedalPercentage = floatMap(gasPedalAnalogValue, 185, 3500, 0, MAX_GAS_PEDAL_PERCENTAGE);
   Serial.print("Gas Analog: ");
@@ -65,6 +67,10 @@ void loop() {
   //This will need to be adjusted once we actually get the sensors in the car
   if ((brakePedalAnalogValue < 185) && (brakePedalAnalogValue > 0)) brakePedalAnalogValue = 185;
   if (brakePedalAnalogValue > 3500) brakePedalAnalogValue = 3500;
+
+  
+  Serial.print("BrakePedalAnalogValue: ");
+  Serial.println(brakePedalAnalogValue);
 
   brakePedalPercentage = floatMap(brakePedalAnalogValue, 185, 3500, 0, MAX_BRAKE_PEDAL_PERCENTAGE);
   Serial.print("Brake Analog: ");
