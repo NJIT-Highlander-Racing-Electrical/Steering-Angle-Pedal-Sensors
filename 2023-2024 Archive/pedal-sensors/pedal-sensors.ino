@@ -5,6 +5,11 @@
 #define TX_GPIO_NUM 26
 #define RX_GPIO_NUM 27
 
+#define GAS_PEDAL_ANALOG_MIN 1600
+#define GAS_PEDAL_ANALOG_MAX 2650
+
+#define BRAKE_PEDAL_ANALOG_MIN 0
+#define BRAKE_PEDAL_ANALOG_MAX 3500
 
 // Define constant values from car. Should be updated when these subsystems are done.
 const int gasPedalSensor = 36;
@@ -40,23 +45,22 @@ void setup() {
 void loop() {
 
   gasPedalAnalogValue = analogRead(gasPedalSensor);
-  Serial.print("GasPedalAnalogValue: ");
-  Serial.println(gasPedalAnalogValue);
 
   //Input voltages from the sensors range between roughly 185-3500
 
   //The code below just clips the input voltage to the 185-3500 range
   //This is so we dont get negative percentages or over 100%
   //This will need to be adjusted once we actually get the sensors in the car
-  if ((gasPedalAnalogValue < 375) && (gasPedalAnalogValue > 0)) gasPedalAnalogValue = 375;
-  if (gasPedalAnalogValue > 2600) gasPedalAnalogValue = 2600;
+  if ((gasPedalAnalogValue < GAS_PEDAL_ANALOG_MIN) && (gasPedalAnalogValue > 0)) gasPedalAnalogValue = GAS_PEDAL_ANALOG_MIN;
+  if (gasPedalAnalogValue > GAS_PEDAL_ANALOG_MAX) gasPedalAnalogValue = GAS_PEDAL_ANALOG_MAX;
 
-  gasPedalPercentage = floatMap(gasPedalAnalogValue, 185, 3500, 0, MAX_GAS_PEDAL_PERCENTAGE);
-  Serial.print("Gas Analog: ");
+  gasPedalPercentage = floatMap(gasPedalAnalogValue, GAS_PEDAL_ANALOG_MIN, GAS_PEDAL_ANALOG_MAX, 0, MAX_GAS_PEDAL_PERCENTAGE);
+  Serial.print("Gas_Analog:");
   Serial.print(gasPedalAnalogValue);
   Serial.print(", ");
-  Serial.print("Gas Percentage: ");
-  Serial.println(gasPedalPercentage);
+  Serial.print("Gas_Percentage:");
+  Serial.print(gasPedalPercentage);
+  Serial.print(", ");
 
   brakePedalAnalogValue = analogRead(brakePedalSensor);
 
@@ -65,18 +69,14 @@ void loop() {
   //The code below just clips the input voltage to the 185-3500 range
   //This is so we dont get negative percentages or over 100%
   //This will need to be adjusted once we actually get the sensors in the car
-  if ((brakePedalAnalogValue < 185) && (brakePedalAnalogValue > 0)) brakePedalAnalogValue = 185;
-  if (brakePedalAnalogValue > 3500) brakePedalAnalogValue = 3500;
+  if ((brakePedalAnalogValue < BRAKE_PEDAL_ANALOG_MIN) && (brakePedalAnalogValue > 0)) brakePedalAnalogValue = BRAKE_PEDAL_ANALOG_MIN;
+  if (brakePedalAnalogValue > BRAKE_PEDAL_ANALOG_MAX) brakePedalAnalogValue = BRAKE_PEDAL_ANALOG_MAX;
 
-  
-  Serial.print("BrakePedalAnalogValue: ");
-  Serial.println(brakePedalAnalogValue);
-
-  brakePedalPercentage = floatMap(brakePedalAnalogValue, 185, 3500, 0, MAX_BRAKE_PEDAL_PERCENTAGE);
-  Serial.print("Brake Analog: ");
+  brakePedalPercentage = floatMap(brakePedalAnalogValue, BRAKE_PEDAL_ANALOG_MIN, BRAKE_PEDAL_ANALOG_MAX, 0, MAX_BRAKE_PEDAL_PERCENTAGE);
+  Serial.print("Brake_Analog:");
   Serial.print(brakePedalAnalogValue);
   Serial.print(", ");
-  Serial.print("Brake Percentage: ");
+  Serial.print("Brake_Percentage:");
   Serial.println(brakePedalPercentage);
 
   //Do we want to add something that checks if the sensor value is zero?
